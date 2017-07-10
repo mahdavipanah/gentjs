@@ -75,14 +75,14 @@ if (process.argv.slice(2).includes('--run')) {
             var fnCodePath = path.join(fnDir, fn.file === undefined ? fn.name + '.js' : '' + fn.file);
 
             mocha.addFile(fnCodePath);
-        });    
+        });
 
     var data = null;
     var done = false;
     mocha.run(function (failures) {
         data = failures;
         done = true;
-    })
+    });
 
     deasync.loopWhile(function(){return !done;});
 
