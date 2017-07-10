@@ -64,9 +64,12 @@ if (process.argv.slice(2).includes('--run')) {
         }
     }
 
-    var mocha = new Mocha({
-        ui: 'tdd'
-    });
+    var mochaOptions = config.mocha;
+    if (mochaOptions === undefined)
+        mochaOptions = {};
+    mochaOptions.ui = 'tdd';
+
+    var mocha = new Mocha(mochaOptions);
 
     // Add test code pathes to mocha
     if (Array.isArray(config.functions))
