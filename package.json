@@ -1,0 +1,22 @@
+{
+  "name": "gentjs",
+  "version": "0.1.0",
+  "description": "Test case generator for JavaScript",
+  "main": "gentjs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test",
+    "test-case",
+    "test-generator",
+    "test-case-generator",
+    "mocha"
+  ],
+  "author": "Hamidreza Mahdavipanah",
+  "license": "MIT",
+  "dependencies": {
+    "deasync": "^0.1.10",
+    "mkdirp": "^0.5.1"
+  }
+}
