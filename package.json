@@ -1,29 +1,29 @@
 {
-    "name": "gentjs",
-    "version": "0.1.0",
-    "description": "Test case generator for JavaScript",
-    "main": "gentjs.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "bin": {
-        "gentjs": "gentjs.js"
-    },
-    "keywords": [
-        "test",
-        "test-case",
-        "test-generator",
-        "test-case-generator",
-        "mocha"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/mahdavipanah/gentjs.git"
-    },
-    "author": "Hamidreza Mahdavipanah",
-    "license": "MIT",
-    "dependencies": {
-        "deasync": "^0.1.10",
-        "mkdirp": "^0.5.1"
-    }
+  "name": "gentjs",
+  "version": "0.2.0",
+  "description": "Test case generator for JavaScript",
+  "main": "gentjs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "gentjs": "gentjs.js"
+  },
+  "keywords": [
+    "test",
+    "test-case",
+    "test-generator",
+    "test-case-generator",
+    "mocha"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahdavipanah/gentjs.git"
+  },
+  "author": "Hamidreza Mahdavipanah",
+  "license": "MIT",
+  "dependencies": {
+    "deasync": "^0.1.10",
+    "mkdirp": "^0.5.1"
+  }
 }
