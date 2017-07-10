@@ -24,8 +24,9 @@ try {
 
     // Read gentjs.json file
     var config = fs.readFileSync(
-        configFile,
-        {encoding: 'UTF-8'}
+        configFile, {
+            encoding: 'UTF-8'
+        }
     );
 
 } catch (e) {
@@ -69,7 +70,7 @@ if (process.argv.slice(2).includes('--run')) {
 
     // Add test code pathes to mocha
     if (Array.isArray(config.functions))
-        config.functions.forEach(function (fn) {
+        config.functions.forEach(function(fn) {
             var fnDir = path.join(CWD, fn.directory === undefined ? config.directory : '' + fn.directory);
             // Function's test case code path
             var fnCodePath = path.join(fnDir, fn.file === undefined ? fn.name + '.js' : '' + fn.file);
@@ -79,12 +80,14 @@ if (process.argv.slice(2).includes('--run')) {
 
     var data = null;
     var done = false;
-    mocha.run(function (failures) {
+    mocha.run(function(failures) {
         data = failures;
         done = true;
     });
 
-    deasync.loopWhile(function(){return !done;});
+    deasync.loopWhile(function() {
+        return !done;
+    });
 
     process.exit(data);
 }
@@ -101,7 +104,7 @@ if (process.argv.length > 2) {
 
 // Check if there is an array of functions defined in config file
 if (!Array.isArray(config.functions))
-        process.exit(0);
+    process.exit(0);
 
 
 var typeMap = null;
@@ -117,13 +120,12 @@ if (config.customTypes) {
 
         process.exit(1);
     }
-}
-else {
+} else {
     typeMap = {
         'str': [null, undefined, 'foo bar', 'FOO BAR', 113, 23.23, '', '   ', '\n\n\t\r'],
-        'char': [null, undefined, '', ' ', 'foo bar' , 'a', 'A', 113, 23.23],
+        'char': [null, undefined, '', ' ', 'foo bar', 'a', 'A', 113, 23.23],
         'bool': [null, undefined, true, false, '', 113, 23.23],
-        'num': function (param) {
+        'num': function(param) {
             var params = [];
 
             // If min is defined
@@ -241,7 +243,7 @@ config.functions.forEach(function(fn) {
                 process.exit(1);
             }
             // Check if param type is an object definable type
-            if(typeof typeMap[param.type] !== 'function') {
+            if (typeof typeMap[param.type] !== 'function') {
                 console.error(
                     "'%s' function's '%s' param type is not object definable.",
                     fn.module,
@@ -290,7 +292,7 @@ config.functions.forEach(function(fn) {
 
     if (fn.module === undefined && config.moduleDirectory === undefined)
         moduleAddr = path.join(CWD, fn.name);
-    else if(config.moduleDirectory !== undefined)
+    else if (config.moduleDirectory !== undefined)
         moduleAddr = path.join(config.moduleDirectory, fn.name);
 
     var fnDir = path.join(CWD, fn.directory === undefined ? config.directory : '' + fn.directory);
@@ -305,7 +307,7 @@ config.functions.forEach(function(fn) {
         (fn.export !== undefined ? '.' + fn.export : '') + ";\n\n\n" +
         format("test('#%s', function() {\n", fn.name);
 
-    testCases.forEach(function (testCase) {
+    testCases.forEach(function(testCase) {
         testCode += config.indent + format(
             "equal(%s(%s), /* Expected value */);\n",
             fn.name,
