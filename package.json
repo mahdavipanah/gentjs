@@ -16,6 +16,10 @@
         "test-case-generator",
         "mocha"
     ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mahdavipanah/gentjs.git"
+    },
     "author": "Hamidreza Mahdavipanah",
     "license": "MIT",
     "dependencies": {
