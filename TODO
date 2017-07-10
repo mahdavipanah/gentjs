@@ -1,3 +1,5 @@
 - Add README.md
 - Add save as JSON feature
 - Add JSHint tests
+- Add options for mocha
+- Save test report
