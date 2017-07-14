@@ -1,3 +1,4 @@
 - Add README.md
 - Add save as JSON feature
 - Command line help and other things!
+- functions should accept a single function as an object (remove array only)
